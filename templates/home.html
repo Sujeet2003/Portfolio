@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<section class="main main-home">
+    <div class="welcome">
+        <h3>Namaskar
+            <i class='fas fa-praying-hands' style='font-size:24px; color: black;'></i>
+            <br>
+            <p>Welcome to Sujeet's Portfolio</p>
+        </h3>
+    </div>
+    <div class="hr"></div>
+    <div class="home">
+        <div class="home-content">
+            <div>
+                <h3>This is</h3>
+                <h1>Sujeet Kumar</h1>
+                <h2>And, I'm a <span>Web Developer</span> !</h2>
+            </div>
+            <p>Pursuing my Bachelor of Engineering in Computer Science & Engineering. I consider myself a responsible and orderly person. I am looking forward for my first work experience.</p>
+            <div class="connections">
+                <i class='bx bxl-whatsapp'></i>
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter' ></i>
+                <i class='bx bxl-instagram' ></i>
+                <i class='bx bxl-skype' ></i>
+            </div>
+            <div class="btn">
+                <button>Github</button>
+                <button>Resume</button>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="{%static 'images/main-img.jpg'%}" alt="image unable to load">
+        </div>
+    </div>
+    <div class="about-me">
+        <div>
+            <h2>Personal Details</h2>
+            <div>
+                <ul>
+                    <li><span>Total experience:</span> Fresher (0 yrs)</li>
+                    <li><span>Current location:</span> Bengaluru</li>
+                    <li><span>Date of birth:</span> July 17, 2003</li>
+                    <li><span>Gender:</span> Male</li>
+                    <li><span>Martial status:</span> Single</li>
+                    <li><span>Email:</span> <a href="">sujeetsmpatel@gmail.com</a></li>
+                    <li><span>Phone:</span> (+91) 78701 07176</li>
+                    <li><span>Languages: </span>Hindi, English</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
