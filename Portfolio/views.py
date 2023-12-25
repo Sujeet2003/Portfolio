@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from .models import ContactUs
+from django.contrib import messages
 
 def home(request):
+    testinomials = ContactUs.objects.filter()[0:2]
+    # test = testinomials.order_by('created_date')
     name = {
         'title': 'Home_Page',
+        'testinomials': testinomials,
     }
     return render(request, 'home.html', name)
 def skills(request):
@@ -22,23 +26,17 @@ def academics(request):
     }
     return render(request, 'academic.html', name)
 def contact(request):
-    values = {}
     dict_values = {
         'title': 'Contact_Page',
-        'data': values,
     }
-    try:
-        if request.method == 'POST':
-            name = request.GET['name']
-            phone = request.GET['phone']
-            email = request.GET['email']
-            description = request.GET['description']
-            values = {
-                'name': name,
-                'phone': phone,
-                'email': email,
-                'description': description,
-            }
-    except:
-        pass
-    return render(request, 'contact.html', dict_values)
+    if request.method == 'POST':
+        contactus = ContactUs()
+        contactus.name = request.POST['name']
+        contactus.phone = request.POST['phone']
+        contactus.email = request.POST['email']
+        contactus.description = request.POST['description']
+        contactus.save()
+        messages.success(request, "Submitted successfully!!")
+        return redirect('contact')
+    else:
+        return render(request, 'contact.html', dict_values)

@@ -15,6 +15,11 @@
     <h2 class="heading">Contact Me</h2>
     <div class="contact">
         <div>
+            {% for msg in messages %}
+                <p style="text-align: center;">{{msg}}</p>
+            {% endfor %}
+        </div>
+        <div>
             <form method="post" autocomplete="off">
                 {% csrf_token %}
                 <div>
