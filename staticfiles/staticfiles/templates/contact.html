@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="main main-contact">
+    <div class="welcome">
+        <h3>
+            <div>
+                Namaskar
+                <span><i class="fa-solid fa-hands-praying"></i></span>
+            </div>
+            <p>Welcome to Sujeet's Portfolio</p>
+        </h3>
+    </div>
+    <div class="hr"></div>
+    <h2 class="heading">Contact Me</h2>
+    <div class="contact">
+        <div>
+            {% for msg in messages %}
+                <p style="text-align: center;">{{msg}}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required="True">
+                </div>
+                <div>
+                    <label for="phone">Phone no: </label>
+                    <input type="number" name="phone" id="phone" placeholder="Enter your phone no" required="True">
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required="True">
+                </div>
+                <div>
+                    <label for="description">Description: </label>
+                    <textarea name="description" id="description" cols="30" rows="10"
+                        placeholder="Enter your view here..."></textarea>
+                </div>
+                <div>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="direct-contact">
+            <h2 class="heading direct-contact-heading">Direct Contact</h2>
+            <div>
+                <li><span><i class='bx bxl-whatsapp'></i></span>(+91) 78701 07176</li>
+                <li><span><i class='bx bx-envelope'></i></span><a href="https://gmail.com/">sujeetsmpatel@gmail.com</a></li>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
