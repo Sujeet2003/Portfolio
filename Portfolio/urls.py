@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from Portfolio import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,3 +11,5 @@ urlpatterns = [
     path('academics/', views.academics),
     path('contact-me/', views.contact, name='contact'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
