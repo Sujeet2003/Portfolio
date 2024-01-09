@@ -184,22 +184,48 @@ section {
     margin: 20px 0;
 }
 
+
 .home .home-content .connections i {
     cursor: pointer;
     font-size: 30px;
-    border: 1px solid black;
     border-radius: 50%;
     padding: 3px;
     margin-right: 10px;
     transition: .4s;
-    background-color: var(--primary-text-color);
+    border: 1px solid white;
+    color: #fff;
 }
-
-.home .home-content .connections i:hover {
-    box-shadow: 0 0 5px 2px var(--secondary-color);
-
+.home .home-content .connections .whatsapp{
+    background-color: rgb(1, 237, 1);
+    
 }
-
+.home .home-content .connections .whatsapp:hover{
+    box-shadow: 0 0 5px 2px rgb(1, 237, 1);
+}
+.home .home-content .connections .facebook{
+    background-color: rgb(73, 73, 255);
+}
+.home .home-content .connections .facebook:hover{
+    box-shadow: 0 0 5px 2px rgb(73, 73, 255);
+}
+.home .home-content .connections .twitter{
+    background-color: rgb(78, 202, 243);
+}
+.home .home-content .connections .twitter:hover{
+    box-shadow: 0 0 5px 2px rgb(78, 202, 243);
+}
+.home .home-content .connections .instagram{
+    background-image: linear-gradient(to left bottom, #5e26e0, #8021df, #9b1cdd, #b319db, #c817d8, #e100c3, #f300ae, #ff089a, #ff3e74, #ff6f54, #ff9a3d, #ffc13b);
+}
+.home .home-content .connections .instagram:hover{
+    box-shadow: 0 0 5px 2px #E21AD4;
+}
+.home .home-content .connections .skype{
+    background-color: rgb(0, 172, 230);
+}
+.home .home-content .connections .skype:hover{
+    box-shadow: 0 0 5px 2px rgb(0, 172, 230);
+}
 .home .home-content .btn button {
     margin: 5px 0;
     margin-right: 10px;
@@ -223,6 +249,11 @@ section {
     margin: 20px;
 }
 
+@media(max-width: 950px){
+    .home{
+        flex-wrap: wrap;
+    }
+}
 .home .home-img img {
     width: 100%;
     height: 100%;
@@ -583,12 +614,12 @@ footer .footer-content {
 
 
 @media only screen and (max-width: 690px) {
-    header nav ul li {
-        display: none;
+    .main{
+        width: 100%;
     }
 
-    .home {
-        flex-wrap: wrap;
+    header nav ul li {
+        display: none;
     }
 
     .home .home-content .connections i {
