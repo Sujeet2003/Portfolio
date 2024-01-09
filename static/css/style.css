@@ -31,14 +31,11 @@ COLOR
 
 
 
-
-
-
-
 /* HEADER */
 
 .active {
     background-color: #8E8FFA;
+    border-radius: 10px;
 }
 
 header nav {
@@ -46,7 +43,7 @@ header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 6px 40px;
     background-color: var(--primary-color);
     z-index: 2;
 }
@@ -73,8 +70,20 @@ header nav ul li a {
     font-family: var(--secondary--font);
     color: var(--primary-text-color);
 }
-
-
+.hamburger{
+    display: none;
+}
+@media(max-width: 730px){
+    header nav ul li {
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+.hamburger svg{
+    fill: #C2D9FF;
+}
 
 
 
@@ -89,6 +98,9 @@ section {
     color: var(--primary-color);
     position: relative;
     z-index: 1;
+}
+.welcome{
+    margin-top: 15px;
 }
 .welcome h3{
     text-align: center;
