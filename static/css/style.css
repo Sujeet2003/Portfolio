@@ -242,24 +242,45 @@ section {
 .home .home-content .btn button:hover {
     box-shadow: 0 0 5px 2px var(--secondary-color);
 }
-
+/* 
 .home .home-img {
     width: 100%;
     height: 100%;
     margin: 20px;
-}
+} */
 
 @media(max-width: 950px){
     .home{
         flex-wrap: wrap;
     }
 }
+/* .home .home-img img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 50%;
+} */
+
+.home .home-img {
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    perspective: 1000px;
+}
+
 .home .home-img img {
     width: 100%;
     height: 100%;
     border: 2px solid black;
     border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
 }
+
+.home .home-img:hover img {
+    transform: rotateY(180deg) scale(1); /* Rotate the image 180 degrees and scale it on hover */
+    box-shadow: 0 0 5px 5px #8E8FFA;
+}
+
 .main-home .about-me{
     margin: 20px;
 }
