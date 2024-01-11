@@ -35,7 +35,6 @@ COLOR
 
 .active {
     background-color: #8E8FFA;
-    border-radius: 10px;
 }
 
 header nav {
@@ -43,7 +42,8 @@ header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 6px 40px;
+    align-items: center;
+    padding: 0 40px;
     background-color: var(--primary-color);
     z-index: 2;
 }
@@ -60,6 +60,7 @@ header nav .logo h2 {
 
 header nav ul {
     display: flex;
+    align-items: center;
 }
 
 header nav ul li a {
@@ -70,16 +71,36 @@ header nav ul li a {
     font-family: var(--secondary--font);
     color: var(--primary-text-color);
 }
+
+
 .hamburger{
     display: none;
 }
+
+
 @media(max-width: 730px){
-    header nav ul li {
-        display: none;
+    .menu{
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 46.5px;
+        background-color: #1b00a2;
+        width: 50%;
+        transition: .3s;
+        left: -400px;
+    }
+    header nav ul li{
+        margin-top: 10px;
+    }
+    .contactClass{
+        margin-bottom: 10px;
     }
     .hamburger{
         display: block;
     }
+}
+.menu.show{
+    left: 0;
 }
 .hamburger svg{
     fill: #C2D9FF;
@@ -98,9 +119,6 @@ section {
     color: var(--primary-color);
     position: relative;
     z-index: 1;
-}
-.welcome{
-    margin-top: 15px;
 }
 .welcome h3{
     text-align: center;
@@ -411,8 +429,19 @@ section {
 .main-academics .academics .academics-info:hover .academics-design{
     transform: translateY(0);
 }
-
-
+@media(max-width: 1200px){
+    .main-academics .academics{
+        flex-wrap: wrap;
+    }
+    .main-academics .academics .academic-box{
+        width: 45%;
+    }
+}
+@media(max-width: 800px){
+    .main-academics .academics .academic-box{
+        width: 100%;
+    }
+}
 
 
 
@@ -429,13 +458,18 @@ section {
 }
 .project .project-box{
     position: relative;
-    width: 40%;
+    width: 45%;
     height: 300px;
     overflow: hidden;
     border: 1px solid black;
     box-shadow: 0 0 5px 2px var(--secondary-color);
     border-radius: 10px;
     margin: 15px;
+}
+@media(max-width: 770px){
+    .project .project-box{
+        width: 70%;
+    }
 }
 .project .project-box img{
     transition: .4s;
@@ -626,13 +660,10 @@ footer .footer-content {
     .main{
         width: 100%;
     }
-
-    header nav ul li {
-        display: none;
+    .project .project-box{
+        width: 100%;
     }
-
     .home .home-content .connections i {
-        font-size: 21px;
         padding: 2px;
         margin-right: 1px;
     }
@@ -645,10 +676,6 @@ footer .footer-content {
     .main-home .about-me h2{
         font-size: 1rem;
     }
-    .main-home .about-me ul li{
-        font-size: 11px;
-    }
-
     .main-academics .academics{
         flex-direction: column;
     }
